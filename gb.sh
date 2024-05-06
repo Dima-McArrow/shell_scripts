@@ -8,7 +8,7 @@ current_branch=$(git branch --show-current)
 
 # Check if the selected branch is the same as the current branch
 if [[ "$selected_branch" == "$current_branch" ]]; then
-  echo "You are already on '$current_branch'. No need to switch branches."
+  echo "Already on '$current_branch'. No need to switch branches."
 else
   # Checkout to the selected branch if different
   git checkout "$selected_branch"
