@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+echo "\n"
+
 export MESSAGE=$(gum input --header="Git add and commit" --header.foreground="129" --placeholder "Commit message")
 
 git add . && git commit -m "$MESSAGE"
