@@ -38,7 +38,7 @@ echo "\n"
 # Initialize npm and install dependencies
 npm init -y | gum format -t code -l json
 
-npm i bcryptjs body-parser cookie-parser cors dotenv express express-rate-limit express-validator helmet morgan multer path sass
+npm i bcryptjs body-parser cookie-parser cors dotenv express express-rate-limit express-validator helmet morgan multer path sass mysql2 sequelize
 
 # Add run script to package.json
 node -e "const packageJson = require('./package.json'); packageJson.scripts = { ...packageJson.scripts, run: 'node server/app.js' }; require('fs').writeFileSync('./package.json', JSON.stringify(packageJson, null, 2));"
@@ -51,6 +51,14 @@ gum format -t code -l json < ./package.json
 # Success message
 echo " Success!" | gum style --padding 1 --margin 1 --foreground="70"
 
+echo "\n"
+
+# Display the installed dependencies
+echo "Installed dependencies:" | gum style --foreground="33" --padding 1 --margin 1
+echo "bcryptjs body-parser cookie-parser cors dotenv express express-rate-limit express-validator helmet morgan multer path sass mysql2 sequelize" | gum style --padding 1
+
+echo "\n"
+
 # Display the next steps
-echo "now enter the following command:" | gum style --foreground="33" --padding 1 --margin 1
-echo "\u001B[32mcd\u001B[0m "$PROJECT_EX_NAME | gum style --padding 1
+echo "now enter the following command to run the project in VSCode:" | gum style --foreground="33" --padding 1 --margin 1
+echo "\u001B[32mcode\u001B[0m "$PROJECT_EX_NAME | gum style --padding 1

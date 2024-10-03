@@ -2,8 +2,26 @@
 
 echo "\n"
 
-export MESSAGE=$(gum input --header="Git add and commit" --header.foreground="129" --placeholder "Commit message")
+# Display a styled message
+gum style \
+	--foreground 202 --border-foreground 208 --border double \
+	--align center --width 50 --margin "1 2" --padding "2 4" \
+	'  Git add all and git commit.' 'Type, summary, message.'
 
-git add . && git commit -m "$MESSAGE"
+# Choose a commit type
+TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert" --header="Choose the type of commit")
 
-echo "\u001B[32m \u001B[0m Done!"
+# Input the summary for the commit
+SUMMARY=$(gum input --value "$TYPE: " --header="Summary")
+
+# Input the detailed message for the commit
+MESSAGE=$(gum write --header="Message")
+
+# Confirm and perform the commit
+gum confirm "Commit changes?" && git add . && git commit -m "$SUMMARY" -m "$MESSAGE"
+
+# Display a success message
+gum style \
+	--foreground 202 --background 46 \
+	--align center --width 50 --margin "2 2" --padding "1 1" \
+	'  Success! Changes committed.'

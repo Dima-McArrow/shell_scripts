@@ -6,7 +6,7 @@ clear
 echo "Select items to ignore in .gitignore:" | gum style --border rounded --padding 1 --margin 1 --foreground="25"
 
 # Collect all selections into an array
-selected_items=($(ls -a | gum choose --no-limit))
+selected_items=($(ls -a | gum choose --no-limit --selected-prefix="✓ " --unselected-prefix="• " --cursor="> "))
 
 # Check if .gitignore already exists, if not create it
 if [ ! -f ".gitignore" ]; then
