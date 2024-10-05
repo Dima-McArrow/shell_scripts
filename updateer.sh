@@ -1,9 +1,17 @@
 #!/usr/bin/zsh
 
+figlet "Updateer" | gum style --foreground 212
+echo "   "
 gum style \
-	--foreground 212 --border-foreground 35 --border double \
-	--align center --width 50 --margin "1 2" --padding "2 4" \
-	'󱑠  Full system update and upgrade' 'for user '$USER
+	--foreground 212 \
+	'󱑠  Full system update and upgrade'
+
+echo "   "
+echo "   "
+
+gum style \
+	--foreground 154 \
+	'User: '$USER
 
 sleep 1
 
