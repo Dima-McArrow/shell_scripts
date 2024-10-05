@@ -23,7 +23,7 @@ gum style \
 gum style \
 	--foreground 17 --background 47 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt (update) ...'
+	'  Running apt update ...'
 
 # Run apt update and capture output
 sudo apt update | while IFS= read -r line; do
@@ -43,7 +43,7 @@ fi
 gum style \
 	--foreground 17 --background 43 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt (upgrade -y) ...'
+	'  Running apt upgrade -y ...'
 
 # Run apt upgrade -y and capture output
 sudo apt upgrade -y | while IFS= read -r line; do
@@ -63,7 +63,7 @@ fi
 gum style \
 	--foreground 235 --background 214 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt (autoremove) ...'
+	'  Running apt autoremove ...'
 
 # Run apt autoremove -y and capture output
 sudo apt autoremove -y | while IFS= read -r line; do
@@ -83,14 +83,14 @@ fi
 gum style \
 	--foreground 92 --background 42 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  apt update success ...'
+	'  apt update and upgrade success ...'
 
 sleep 1
 
 gum style \
 	--foreground 22 --background 47 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt-get (update) ...'
+	'  Running apt-get update ...'
 
 # Run apt update and-get capture output
 sudo apt-get update | while IFS= read -r line; do
@@ -110,7 +110,7 @@ fi
 gum style \
 	--foreground 13 --background 43 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt-get (upgrade -y) ...'
+	'  Running apt-get upgrade -y ...'
 
 # Run apt-get upgrade -y and capture output
 sudo apt-get upgrade -y | while IFS= read -r line; do
@@ -130,7 +130,7 @@ fi
 gum style \
 	--foreground 235 --background 214 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Updating apt-get (autoremove) ...'
+	'  Running apt-get autoremove ...'
 
 # Run apt-get autoremove -y and capture output
 sudo apt-get autoremove -y | while IFS= read -r line; do
@@ -150,7 +150,7 @@ fi
 gum style \
 	--foreground 92 --background 42 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  apt-get update success ...'
+	'  apt-get update and upgrade success ...'
 
 sleep 1
 
@@ -166,7 +166,7 @@ brew update && brew upgrade
 gum style \
 	--foreground 92 --background 42 \
 	--align center --width 50 --margin "2 2" --padding "1 1" \
-	'  Homebrew update success ...'
+	'  Homebrew update and upgrade success ...'
 
 sleep 1
 
