@@ -24,16 +24,8 @@ fi
 # Create the project directory and navigate into it
 mkdir "$PROJECT_EX_NAME" && cd "$PROJECT_EX_NAME"
 
-# Display project structure creation message
-echo "  Project structure:" | gum style --foreground="25" --padding 1 --margin 1
-
 # Create project structure
 mkdir -p public/{HTML,styles,scripts} server/{routes,controllers,middleware,config}
-
-# List the directory structure
-ls | gum style --foreground="76" --border rounded --padding 1 --margin 1
-
-echo "\n"
 
 # Initialize npm and install dependencies
 npm init -y | gum format -t code -l json
@@ -56,6 +48,14 @@ echo "\n"
 # Display the installed dependencies
 echo "Installed dependencies:" | gum style --foreground="33" --padding 1 --margin 1
 echo "bcryptjs body-parser cookie-parser cors dotenv express express-rate-limit express-validator helmet morgan multer path sass mysql2 sequelize" | gum style --padding 1
+
+echo "\n"
+
+# Display project structure creation message
+echo "  Project structure:" | gum style --foreground="25" --padding 1 --margin 1
+
+# List the directory structure
+ls -a | gum style --foreground="76" --border rounded --padding 1 --margin 1
 
 echo "\n"
 

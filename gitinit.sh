@@ -27,9 +27,14 @@ echo "\n.gitignore file updated with selected items:" | gum style --padding 1 --
 # Display the contents of .gitignore with syntax highlighting and custom styling
 gum format -t code < .gitignore
 
+echo "\n"
+
 # Initialize git repository if not already initialized
 if [ ! -d ".git" ]; then
-    git init
+    git init | while IFS= read -r line; do
+    # Log each line using gum
+    gum log --prefix="GIT INIT" --level="info" --message.foreground="cyan" "$line"
+    done
     echo "\u001B[32m \u001B[0m Done!" | gum style --border rounded --padding 1 --margin 1 --foreground white
 else
     echo "Git repository already initialized." | gum style --border rounded --padding 1 --margin 1 --foreground="178"
