@@ -1,8 +1,4 @@
 #!/usr/bin/zsh
-
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-
-figlet "Updateer" | /home/linuxbrew/.linuxbrew/bin/gum style --foreground 212
 echo "   "
 /home/linuxbrew/.linuxbrew/bin/gum style \
 	--foreground 212 \
